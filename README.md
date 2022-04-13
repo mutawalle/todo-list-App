@@ -1,4 +1,4 @@
-#Getting startted
+# Getting startted
 
 ## npm start
 npm start in this folder
