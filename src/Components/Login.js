@@ -38,7 +38,7 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.get('http://localhost:4000/user/njuihu/ijiu')
+        axios.get(`http://localhost:4000/user/${email}/${password}`)
         .then(res => {
             navigate('/', {state: res.data})
         }).catch(err => {
@@ -71,8 +71,8 @@ export default function Login() {
                         <input type="password" name="password" placeholder="Password" onChange={ e => setPassword(e.target.value)} onFocus={handleFocus} onBlur={handleBlur}/>
                      </div>
                      <input className="submitAuth" type="submit" value="Login" onClick={handleSubmit}/>
-                     <a href='/register' style={{fontSize: "12px", marginTop: '5px'}}>Registrasi</a>
-                 </form>
+                </form>
+                <a href='/register' style={{fontSize: "12px", marginTop: '5px'}}>Registrasi</a>
             </div>
         </div>
         <style jsx>{`
